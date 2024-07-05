@@ -1,0 +1,30 @@
+/* carousel.module.css */
+
+.carousel {
+  width: 100%; /* Ensures the carousel spans the full width of its container */
+  margin-top: 20px; /* Adjust top margin as needed */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+
+.carouselIndicators {
+  bottom: 10px; /* Adjusts the position of the indicators */
+}
+
+.carouselImage {
+  height: 500px; /* Sets a fixed height for the carousel images */
+  object-fit: cover; /* Ensures the image covers the entire container */
+  border-radius: 8px; /* Adds rounded corners to the images */
+}
+
+.carouselControl {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for controls */
+  border-radius: 50%; /* Makes the control buttons round */
+  color: white; /* Color of the control icons */
+  top: 50%; /* Positions the controls vertically centered */
+  transform: translateY(-50%); /* Adjusts for vertical centering */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Inverts the color of the carousel control icons */
+}

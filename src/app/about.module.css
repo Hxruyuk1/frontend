@@ -1,0 +1,27 @@
+/* about.module.css */
+
+.aboutContainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .title {
+    color: #004085; 
+  }
+  
+  .text {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .img-fluid {
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .rounded {
+    border-radius: 8px;
+  }
+  

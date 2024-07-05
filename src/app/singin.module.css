@@ -1,0 +1,33 @@
+/* Login.module.css */
+
+.loginContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loginForm {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loginForm h1 {
+    color: #495057;
+  }
+  
+  .loginForm input[type="email"],
+  .loginForm input[type="password"] {
+    margin-bottom: 1rem;
+  }
+  
+  .loginForm button {
+    margin-top: 1rem;
+  }
+  
+  .loginForm a {
+    color: #007bff;
+  }
+  

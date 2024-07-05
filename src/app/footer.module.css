@@ -1,0 +1,19 @@
+/* footer.module.css */
+
+.footerContainer {
+  margin-top: 50px; /* Adjust margin-top as needed */
+}
+
+.footer {
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  
+}
+
+.navLink {
+  color: #007bff; /* Blue color for links */
+}
+
+.footerText {
+  color: #6c757d; /* Text color for footer text */
+}

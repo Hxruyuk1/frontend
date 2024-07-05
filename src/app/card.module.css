@@ -1,0 +1,25 @@
+.card {
+    background-color: #f8f9fa; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2c3e50; 
+  }
+  
+  .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+  }
+  

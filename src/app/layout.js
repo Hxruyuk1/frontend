@@ -1,5 +1,15 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
+import Navbar from "@/components/nav";
+import BootstrapClient from "@/components/bootstrapClient";
+import Carousel from "@/components/carousel";
+import Card from "@/components/card";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +21,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <BootstrapClient />
+        <Navbar />
+        
+        
+        <div className="mt-2 mb-2">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

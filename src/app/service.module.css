@@ -1,0 +1,35 @@
+/* service.module.css */
+.serviceContainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    color: #007bff;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-body .fa-icon {
+    margin-bottom: 10px;
+  }
+  
