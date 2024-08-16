@@ -14,7 +14,7 @@ export default function Page({params}) {
   useEffect(() => {
     async function getUsers() {
       try {
-        const res = await fetch(`https://backend-six-teal.vercel.app/api/user/${id}`);
+        const res = await fetch(`https://backend-six-teal.vercel.app/api/users/${id}`);
         if (!res.ok) {
           console.error('Failed to fetch data');
           return;
