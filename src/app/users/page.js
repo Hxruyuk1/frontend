@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function Page() {
   const [items, setItems] = useState([]);
 
-  const handleDeleteSubmit = async () => {
+  const handleDeleteSubmit = async (id) => {
     
   
     try {
