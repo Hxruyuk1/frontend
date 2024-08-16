@@ -57,10 +57,7 @@ const handleUpdateSubmit = async (e) => {
 
     const result = await res.json();
     setMessage('Update successful!');
-    setFirstName('');
-    setLastName('');
-    setUserName('');
-    setPassWord('');
+    
     console.log(result);
   } catch (error) {
     console.error('Error:', error);
