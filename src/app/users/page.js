@@ -6,6 +6,32 @@ import { useEffect, useState } from 'react';
 export default function Page() {
   const [items, setItems] = useState([]);
 
+  const handleDeleteSubmit = async () => {
+    
+  
+    try {
+      const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id}),
+      });
+  
+      if (!res.ok) {
+        const errorData = await res.json();  // Capture detailed error information
+        console.error('Server error:', errorData);
+        throw new Error(errorData.message || 'Failed to Update. Please try again.');
+      }
+  
+      
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('Error: ' + error.message);
+    }
+  };
+
   useEffect(() => {
     async function getUsers() {
       try {
@@ -54,7 +80,7 @@ export default function Page() {
               <td>{item.firstname}</td>
               <td>{item.lastname}</td>
               <td><Link href={`/users/edit/${item.id}`} className="btn btn-warning">Edit</Link></td>
-              <td><Link href="#" className="btn btn-danger">Del</Link></td>
+              <td><button onClick={() => handleDeleteSubmit(item.id)} className="btn btn-danger">Del</button></td>
             </tr>
           ))}
         </tbody>
