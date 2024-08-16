@@ -9,6 +9,27 @@ export default function Page({params}) {
   const [username, setUserName] = useState('');
   const [password, setPassWord] = useState('');
   const [message, setMessage] = useState('');
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    async function getUsers() {
+      try {
+        const res = await fetch(`https://backend-six-teal.vercel.app/api/user/${id}`);
+        if (!res.ok) {
+          console.error('Failed to fetch data');
+          return;
+        }
+        const data = await res.json();
+        setItems(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+ 
+  getUsers()
+  // const interval  = setInterval(getUsers, 1000);
+  // return () => clearInterval(interval );
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,25 +61,7 @@ export default function Page({params}) {
     }
   };
 
-  useEffect(() => {
-    async function getUsers() {
-      try {
-        const res = await fetch(`https://backend-six-teal.vercel.app/api/user/edit/${id}`);
-        if (!res.ok) {
-          console.error('Failed to fetch data');
-          return;
-        }
-        const data = await res.json();
-        setItems(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
- 
-  getUsers()
-  const interval  = setInterval(getUsers, 1000);
-  return () => clearInterval(interval );
-}, []);
+  
 
   return (
     <>
@@ -66,7 +69,7 @@ export default function Page({params}) {
       <div className="container">
         <div className="card">
           <div className="card-header bg-success text-white">
-            Edit Form {id}
+            Edit Form {JSON.stringify(items)}
           </div>
           <div className="card-body">
             {message && <div className="alert alert-info">{message}</div>}
