@@ -21,10 +21,10 @@ export default function Page({params}) {
         }
         const data = await res.json();
         setItems(data);
-        setFirstName(data.firstname);
-        setLastName(data.lastname);
-        setUserName(data.username);
-        setPassWord(data.password);
+        setFirstName(data[0].firstname);
+        setLastName(data[0].lastname);
+        setUserName(data[0].username);
+        setPassWord(data[0].password);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
