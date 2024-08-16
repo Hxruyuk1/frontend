@@ -31,37 +31,38 @@ export default function Page({params}) {
   // return () => clearInterval(interval );
 }, []);
 
-  const handleUpdateSubmit = async (e) => {
-    e.preventDefault();
-    setMessage('');
+const handleUpdateSubmit = async (e) => {
+  e.preventDefault();
+  setMessage('');
 
-    try {
-      const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
-        method: 'PUT',
-        headers: {
-          'Accept': 'application/json','Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, firstname, lastname, username, password }),
-      });
+  try {
+    const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id, firstname, lastname, username, password }),
+    });
 
-      if (!res.ok) {
-        throw new Error('Failed to Upadate. Please try again.');
-      }
-
-      const result = await res.json();
-      setMessage('Update successful!');
-      setFirstName('');
-      setLastName('');
-      setUserName('');
-      setPassWord('');
-      console.log(result);
-    } catch (error) {
-      console.error('Error:', error);
-      setMessage('Error: ' + error.message);
+    if (!res.ok) {
+      const errorData = await res.json();  // Capture detailed error information
+      console.error('Server error:', errorData);
+      throw new Error(errorData.message || 'Failed to Update. Please try again.');
     }
-  };
 
-  
+    const result = await res.json();
+    setMessage('Update successful!');
+    setFirstName('');
+    setLastName('');
+    setUserName('');
+    setPassWord('');
+    console.log(result);
+  } catch (error) {
+    console.error('Error:', error);
+    setMessage('Error: ' + error.message);
+  }
+};
 
   return (
     <>
