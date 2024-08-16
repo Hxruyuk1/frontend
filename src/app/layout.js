@@ -3,6 +3,10 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+// _app.js หรือ index.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 config.autoAddCss = false;
 
 import Navbar from "@/components/nav";

@@ -30,12 +30,13 @@ export default function Nav() {
             </li>
           </ul>
           <form className="d-flex">
-          <Link href="/Signin">
-            <li className="btn btn-outline-success me-md-2">Sign In</li>
-          </Link>
           <Link href="/Signup">
-            <li className="btn btn-outline-primary">Sign Up</li>
+            <li className="btn btn-outline-success me-md-2">Sign Up</li>
           </Link>
+          <Link href="/Signin">
+            <li className="btn btn-outline-primary ">Sign In</li>
+          </Link>
+          
         </form>
         </div>
       </div>
