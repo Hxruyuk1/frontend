@@ -80,28 +80,28 @@ export default function Page({params}) {
                 <label htmlFor="firstname" className="form-label">First Name</label>
                 <div className="input-group">
                   <span className="input-group-text"><i className="bi bi-person-vcard"></i></span>
-                  <input type="text" className="form-control" id="firstname" value={item.firstname} onChange={(e) => setFirstName(e.target.value)} required />
+                  <input type="text" className="form-control" id="firstname" defaultValue={item.firstname} onChange={(e) => setFirstName(e.target.value)} required />
                 </div>
               </div>
               <div className="col-md-6">
                 <label htmlFor="lastname" className="form-label">Last Name</label>
                 <div className="input-group">
                   <span className="input-group-text"><i className="bi bi-person-vcard-fill"></i></span>
-                  <input type="text" className="form-control" id="lastname" value={item.lastname} onChange={(e) => setLastName(e.target.value)} required />
+                  <input type="text" className="form-control" id="lastname" defaultValue={item.lastname} onChange={(e) => setLastName(e.target.value)} required />
                 </div>
               </div>
               <div className="col-md-6">
                 <label htmlFor="username" className="form-label">Username</label>
                 <div className="input-group">
                   <span className="input-group-text"><i className="bi bi-person-vcard"></i></span>
-                  <input type="text" className="form-control" id="username" value={item.username} onChange={(e) => setUserName(e.target.value)} required />
+                  <input type="text" className="form-control" id="username" defaultValue={item.username} onChange={(e) => setUserName(e.target.value)} required />
                 </div>
               </div>
               <div className="col-md-6">
                 <label htmlFor="password" className="form-label">Password</label>
                 <div className="input-group">
                   <span className="input-group-text"><i className="bi bi-person-vcard-fill"></i></span>
-                  <input type="password" className="form-control" id="password" value={item.password} onChange={(e) => setPassWord(e.target.value)} required />
+                  <input type="password" className="form-control" id="password" defaultValue={item.password} onChange={(e) => setPassWord(e.target.value)} required />
                 </div>
               </div>
               <div className="col-12">
