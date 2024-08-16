@@ -31,25 +31,25 @@ export default function Page({params}) {
   // return () => clearInterval(interval );
 }, []);
 
-  const handleSubmit = async (e) => {
+  const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
 
     try {
       const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Accept': 'application/json',
         },
-        body: JSON.stringify({ firstname, lastname, username, password }),
+        body: JSON.stringify({ id, firstname, lastname, username, password }),
       });
 
       if (!res.ok) {
-        throw new Error('Failed to sign up. Please try again.');
+        throw new Error('Failed to Upadate. Please try again.');
       }
 
       const result = await res.json();
-      setMessage('Edit successful!');
+      setMessage('Update successful!');
       setFirstName('');
       setLastName('');
       setUserName('');
@@ -75,7 +75,7 @@ export default function Page({params}) {
             {message && <div className="alert alert-info">{message}</div>}
 
             {items.map((item) =>(
-            <form className="row g-3" onSubmit={handleSubmit}>
+            <form className="row g-3" onSubmit={handleUpdateSubmit}>
               <div className="col-md-6">
                 <label htmlFor="firstname" className="form-label">First Name</label>
                 <div className="input-group">
