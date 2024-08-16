@@ -1,6 +1,10 @@
 'use client';
 import { useState } from 'react';
 
+export default function Page({params}){
+  const {id} = params;
+}
+
 export default function Page() {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
@@ -13,7 +17,7 @@ export default function Page() {
     setMessage('');
 
     try {
-      const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
+      const res = await fetch('https://backend-six-teal.vercel.app/api/users/edit', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
