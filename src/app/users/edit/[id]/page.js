@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 
-export default function Page(params) {
+export default function Page({params}) {
   const {id} = params;
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
