@@ -20,9 +20,9 @@ export default function Page({ params }) {
         }
         const data = await res.json();
         setItems(data);
-        setFirstName(data.firstname);
-        setLastName(data.lastname);
-        setUserName(data.username);
+        setFirstName(data[0].firstname);
+        setLastName(data[0].lastname);
+        setUserName(data[0].username);
         // Consider not setting the password field from the fetched data for security reasons
       } catch (error) {
         console.error('Error fetching data:', error);
