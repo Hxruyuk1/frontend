@@ -69,7 +69,7 @@ export default function Page({params}) {
       <div className="container">
         <div className="card">
           <div className="card-header bg-success text-white">
-            Edit Form {JSON.stringify(items)}
+            Edit Form {JSON.stringify(id)}
           </div>
           <div className="card-body">
             {message && <div className="alert alert-info">{message}</div>}
