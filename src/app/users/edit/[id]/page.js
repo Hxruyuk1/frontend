@@ -39,7 +39,7 @@ export default function Page({params}) {
       const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
         method: 'PUT',
         headers: {
-          'Accept': 'application/json',
+          'Accept': 'application/json','Content-Type': 'application/json',
         },
         body: JSON.stringify({ id, firstname, lastname, username, password }),
       });
