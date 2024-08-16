@@ -43,6 +43,26 @@ export default function Page() {
     }
   };
 
+  useEffect(() => {
+    async function getUsers() {
+      try {
+        const res = await fetch(`https://backend-six-teal.vercel.app/api/users/${id}`);
+        if (!res.ok) {
+          console.error('Failed to fetch data');
+          return;
+        }
+        const data = await res.json();
+        setItems(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+ 
+  getUsers()
+  const interval  = setInterval(getUsers, 1000);
+  return () => clearInterval(interval );
+}, []);
+
   return (
     <>
       <br /><br /><br />
