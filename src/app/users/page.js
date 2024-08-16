@@ -69,7 +69,7 @@ export default function Page() {
             <th className='col-md-2 text-center'>#</th>
             <th className='col-md-4'>Firstname</th>
             <th className='col-md-4'>Lastname</th>
-            <th className='col-md-1'>Eidt</th>
+            <th className='col-md-1'>Edit</th>
             <th className='col-md-1'>Delete</th>
           </tr>
         </thead>
