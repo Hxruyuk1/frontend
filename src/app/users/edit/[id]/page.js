@@ -17,7 +17,7 @@ export default function Page() {
     setMessage('');
 
     try {
-      const res = await fetch('https://backend-six-teal.vercel.app/api/users/edit', {
+      const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -48,7 +48,7 @@ export default function Page() {
       <div className="container">
         <div className="card">
           <div className="card-header bg-success text-white">
-            Edit Form
+            Edit Form {id}
           </div>
           <div className="card-body">
             {message && <div className="alert alert-info">{message}</div>}
