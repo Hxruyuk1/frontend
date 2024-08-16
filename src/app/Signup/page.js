@@ -13,7 +13,7 @@ export default function Page() {
     setMessage('');
 
     try {
-      const res = await fetch('http://localhost:3001/api/users', {
+      const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
