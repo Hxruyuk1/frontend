@@ -7,21 +7,21 @@ export default function Page() {
   const [items, setItems] = useState([]);
   const router = useRouter();
 
-  const handleDeleteSubmit = async (id) => {
+  // ตรวจสอบ token ตอนเข้าเพจ
+  useEffect(() => {
     const token = localStorage.getItem('token');
-
     if (!token) {
-      router.push('/Signin'); // Redirect to login if token is missing
-      return;
+      router.push('/Signin'); // รีไดเร็กต์ไปที่หน้าเข้าสู่ระบบถ้าไม่มี token
     }
+  }, [router]);
 
+  const handleDeleteSubmit = async (id) => {
     try {
       const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // Include token in request headers
         },
         body: JSON.stringify({ id }),
       });
@@ -33,25 +33,13 @@ export default function Page() {
       }
     } catch (error) {
       console.error('Error:', error);
-      setMessage('Error: ' + error.message);
     }
   };
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      router.push('/Signin'); // Redirect to login if token is missing
-      return;
-    }
-
     async function getUsers() {
       try {
-        const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
-          headers: {
-            'Authorization': `Bearer ${token}`, // Include token in request headers
-          },
-        });
+        const res = await fetch('https://backend-six-teal.vercel.app/api/users');
         if (!res.ok) {
           console.error('Failed to fetch data');
           return;
@@ -66,7 +54,7 @@ export default function Page() {
     getUsers();
     const interval = setInterval(getUsers, 1000);
     return () => clearInterval(interval);
-  }, [router]);
+  }, []);
 
   return (
     <>
