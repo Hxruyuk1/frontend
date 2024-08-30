@@ -11,7 +11,7 @@ export default function Page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
-
+    
     try {
       const res = await fetch('https://backend-six-teal.vercel.app/api/users', {
         method: 'POST',

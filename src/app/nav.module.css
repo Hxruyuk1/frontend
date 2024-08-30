@@ -1,24 +1,31 @@
-.navbarBrand {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    
-    color: #007bff; 
-  }
-  
-  .logo {
-    margin-right: 10px; 
-  }
-  
-  .navLink {
-    color: #007bff; 
-    font-weight: bold;
-  }
-  
-  .navLink:hover {
-    color: #0056b3; 
-  }
-  .form-inline .btn {
-    margin-left: 10px;
-  }
-  
+.navbar {
+  background-color: #f8f9fa; /* Light background */
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Brand color */
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: #343a40; /* Darker color for links */
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff; /* Link hover color */
+}
+
+.username {
+  font-size: 1rem;
+  color: #495057; /* Subtle text color */
+}
+
+.btn-outline-danger, .btn-outline-primary, .btn-outline-secondary {
+  font-size: 1rem;
+  padding: 5px 15px;
+}
