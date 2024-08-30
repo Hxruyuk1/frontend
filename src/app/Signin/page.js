@@ -54,7 +54,7 @@ export default function LoginPage() {
       setIsLoggedIn(true);
 
       setMessage('Login successful!');
-      window.location.reload()
+      window.location.reload();
       router.push('/'); // Redirect to home or another page
     } catch (error) {
       console.error('Error:', error);
