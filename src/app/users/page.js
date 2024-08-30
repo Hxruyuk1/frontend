@@ -41,7 +41,7 @@ export default function Page() {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      router.push('/signin'); // Redirect to login if token is missing
+      router.push('/Signin'); // Redirect to login if token is missing
       return;
     }
 
